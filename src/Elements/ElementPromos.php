@@ -13,6 +13,7 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class PromosElement.
+ * @property boolean $Alternate
  */
 class ElementPromos extends BaseElement
 {
@@ -46,6 +47,7 @@ class ElementPromos extends BaseElement
      */
     private static $db = [
         'Content' => DBHTMLText::class,
+        'Alternate' => 'Boolean',
     ];
 
     /**
@@ -70,9 +72,8 @@ class ElementPromos extends BaseElement
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
-            $fields->dataFieldByName('Content')
-                ->setRows(8)
-            ;
+            $fields->dataFieldByName('Content')->setRows(8);
+            $fields->dataFieldByName('Alternate')->setTitle('Alternate images and text');
 
             if ($this->ID) {
                 $promoField = $fields->dataFieldByName('Promos');

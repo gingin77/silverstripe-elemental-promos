@@ -2,5 +2,9 @@
 <% if $Content %><div class="element__content">$Content</div><% end_if %>
 
 <% if $PromoList %>
-    <% include PromosSimple %>
+    <% if $Alternate %>
+        <% include PromosCardDeck %>
+    <% else %>
+        <% include PromosSimple %>
+    <% end_if %>
 <% end_if %>
