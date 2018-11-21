@@ -73,7 +73,7 @@ class ElementPromos extends BaseElement
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
             $fields->dataFieldByName('Content')->setRows(8);
-            $fields->dataFieldByName('Alternate')->setTitle('Alternate images and text');
+            $fields->dataFieldByName('Alternate')->setTitle('Display promos in vertical column');
 
             if ($this->ID) {
                 $promoField = $fields->dataFieldByName('Promos');

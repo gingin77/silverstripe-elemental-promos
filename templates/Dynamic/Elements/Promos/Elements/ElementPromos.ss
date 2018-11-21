@@ -3,8 +3,8 @@
 
 <% if $PromoList %>
     <% if $Alternate %>
-        <% include PromosCardDeck %>
+        <% include PromosVertical %>
     <% else %>
-        <% include PromosSimple %>
+        <% include PromosHorizontal %>
     <% end_if %>
 <% end_if %>
