@@ -6,10 +6,12 @@ use DNADesign\Elemental\Models\BaseElement;
 use Dynamic\Elements\Promos\Model\PromoObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
+use SilverStripe\Forms\DropdownField;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use Symbiote\GridFieldExtensions\GridFieldAddExistingSearchButton;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Dev\Debug;
 
 /**
  * Class PromosElement.
@@ -47,7 +49,7 @@ class ElementPromos extends BaseElement
      */
     private static $db = [
         'Content' => DBHTMLText::class,
-        'Alternate' => 'Boolean',
+        'TemplateStyle' => 'Enum(array("Reports", "Team Presentations", "Posters", "Vertical Icons"))',
     ];
 
     /**
@@ -73,7 +75,6 @@ class ElementPromos extends BaseElement
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
             $fields->dataFieldByName('Content')->setRows(8);
-            $fields->dataFieldByName('Alternate')->setTitle('Display promos in vertical column');
 
             if ($this->ID) {
                 $promoField = $fields->dataFieldByName('Promos');

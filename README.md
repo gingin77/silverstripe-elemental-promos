@@ -37,8 +37,8 @@ A simple display of the promos is being used by default in the `PromosSimple.ss`
 #### Front End sample of a Promos Element
 ![Front End sample of a Promos Element](./readme-images/promos-block-sample.jpg)
 
-#### Alternate Front End sample of a Promos Element (uses Card Deck include)
-![Front End sample of a Promos Element](./readme-images/promos-block-sample-alternate.jpg)
+#### Alternate Front End options
+Use "TemplateStyle" enum field instead of "Alternate" to support more than 2 template options
 
 #### CMS - Promos Main Tab
 ![CMS - Promos Block Main Tab](./readme-images/promos-block-cms.jpg)

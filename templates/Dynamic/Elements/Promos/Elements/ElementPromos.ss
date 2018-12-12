@@ -2,9 +2,13 @@
 <% if $Content %><div class="element__content">$Content</div><% end_if %>
 
 <% if $PromoList %>
-    <% if $Alternate %>
-        <% include PromosVertical %>
-    <% else %>
-        <% include PromosHorizontal %>
+    <% if $TemplateStyle == "Team Presentations" %>
+        <% include TeamPresentations %>
+    <% else_if $TemplateStyle == "Reports" %>
+        <% include Reports %>
+    <% else_if $TemplateStyle == 'Vertical Icons' %>
+        <% include VerticalIcons %>
+    <% else_if $TemplateStyle == 'Posters' %>
+        <% include Posters %>
     <% end_if %>
 <% end_if %>
